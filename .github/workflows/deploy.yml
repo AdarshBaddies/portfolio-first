@@ -5,6 +5,9 @@ on:
     branches:
       - main
 
+permissions:
+  contents: write  # ← IMPORTANT: allows pushing to gh-pages
+
 jobs:
   deploy:
     runs-on: ubuntu-latest
@@ -27,5 +30,5 @@ jobs:
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@v4
         with:
-          branch: gh-pages        # Deployment branch
-          folder: dist            # Folder to deploy
+          branch: gh-pages
+          folder: dist
